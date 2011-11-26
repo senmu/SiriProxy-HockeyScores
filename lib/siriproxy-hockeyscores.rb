@@ -24,12 +24,6 @@ class SiriProxy::Plugin::HockeyScores < SiriProxy::Plugin
 	  score(team) #in the function, request_completed will be called when the thread is finished
 	end
 	
-	listen_for /hello bob /i do
-	  say "Siri Proxy is up and running!" #say something to the user!
-    
-    request_completed #always complete your request! Otherwise the phone will "spin" at the user!
-  end
-	
 	def score(userTeam)
 	  Thread.new {
 	    doc = Nokogiri::HTML(open("http://www.nhl.com/ice/m_scores.htm"))
