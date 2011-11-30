@@ -94,6 +94,7 @@ class SiriProxy::Plugin::HockeyScores < SiriProxy::Plugin
     when /washington/i, /caps/i                then "Capitals"
     when /winnipeg/i                           then "Jets"
     else phrase
+    end
     # The above should catch city names, team nicknames, or words which Siri would misinterpret
     # If the person said the team name verbatim as NHL needs just return it
   end
