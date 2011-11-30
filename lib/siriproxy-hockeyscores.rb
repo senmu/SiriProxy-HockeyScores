@@ -9,13 +9,11 @@ require 'nokogiri'
 #############
 
 class SiriProxy::Plugin::HockeyScores < SiriProxy::Plugin
-  @firstTeamName   = ""
-  @firstTeamScore  = ""
-  @secondTeamName  = ""
-  @secondTeamScore = ""
-
   def initialize(config)
-    # if you have custom configuration options, process them here!
+    @firstTeamName   = ""
+    @firstTeamScore  = ""
+    @secondTeamName  = ""
+    @secondTeamScore = ""
   end
 
   listen_for /score of the (.*) game/i do |phrase|
